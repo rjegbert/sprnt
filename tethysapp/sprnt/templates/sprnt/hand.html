@@ -1,0 +1,71 @@
+{% extends "sprnt/base.html" %}
+{% load tethys_gizmos staticfiles %}
+
+{% block app_content %}
+    {% gizmo map_options %}
+{% endblock %}
+
+{% block scripts %}
+    {{ block.super }}
+    <script src="{% static 'sprnt/js/foo3.js' %}" type="text/javascript"></script>
+{% endblock %}
+
+{% block app_navigation_items %}
+  {% url 'sprnt:home' as home_url %}
+  {% url 'sprnt:remote_sensing' as remote_sensing_url %}
+  {% url 'sprnt:hand' as hand_url %}
+  {% url 'sprnt:hurricane_matthew' as hurricane_matthew_url %}
+<li class="title"><center><b>NAVIGATION</b></center></li>
+  <li class="{% if request.path == home_url %}active{% endif %}"><a href="{{ home_url }}">SPRNT NWM Comparison</a></li>
+  <li class="{% if request.path == remote_sensing_url %}active{% endif %}"><a href="{{ remote_sensing_url }}">Validation</a></li>
+  <li class="{% if request.path == hand_url %}active{% endif %}"><a href="{{ hand_url }}">HAND</a></li>
+  <li class="{% if request.path == hurricane_matthew_url %}active{% endif %}"><a href="{{ hurricane_matthew_url }}">Hurricane Matthew</a></li>
+    <div class="bigline sprntblue"></div>
+    <li class="title"><center><b>LEGEND</b></center></li>
+    <p><b>Goldsboro Flowline</b></p>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="Gboro_flowlines" checked>
+        <div class="hline flow"></div><p class="space">Flowline</p>
+      </label>
+    </div>
+    <p><b>1 Catchment</b></p>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="HandCatch1">
+        <div class="hline black"></div><p class="space">Catchment Boundary</p>
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="HandMap1">
+        <div class="foo medium"></div><p class="space">Inundated Area</p>
+      </label>
+    </div>
+    <p><b>5 Catchments (HUC12 units)</b></p>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="HandCatch5" checked>
+        <div class="hline vhgreen"></div><p class="space">Catchment Boundary</p>
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="HandMap5" checked>
+        <div class="foo vhgreen"></div><p class="space">Inundated Area</p>
+      </label>
+    </div>
+    <p><b>1756 Catchments (all COMIDs)</b></p>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="HandCatch20">
+        <div class="hline flood"></div><p class="space">Catchment Boundary</p>
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="HandMap20">
+        <div class="foo HANDblue"></div><p class="space">Inundated Area</p>
+      </label>
+    </div>
+{% endblock %}

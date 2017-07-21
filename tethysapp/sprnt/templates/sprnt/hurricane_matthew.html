@@ -1,0 +1,17 @@
+{% extends "sprnt/base.html" %}
+{% load tethys_gizmos %}
+<style>
+    #inner-app-content {
+        height: 100%;
+        padding: 40px;
+    }
+</style>
+
+{% block app_content %}
+  <center><h1><b>Hurricane Matthew</b></h1>
+  <h5><em>October 12-14, 2016</em></h5>
+  <iframe width="100%" height="400" src="https://www.youtube.com/embed/VjXPVcS-2u0?ecver=1" frameborder="0" allowfullscreen></iframe></center>
+  <h3>SUMMARY</h3>
+  <p>Hurricane Matthew brought devastating flooding, strong winds and moderate storm surge to the coast of Eastern North Carolina during the afternoon and evening of October 8 through the early afternoon hours of October 9. The main legacy of Hurricane Matthew in eastern North Carolina will be the catastrophic flooding over the Coastal Plains of eastern North Carolina. River flood levels not seen since Hurricane Floyd in 1999 caused millions of dollars of damage and multiple deaths across the eastern third of North Carolina. Record storm surge levels were also recorded at Cape Hatteras with 5.8 feet MHHW (Mean Higher High Water).</p>
+  <p><a href="http://www.weather.gov/mhx/MatthewSummary">National Weather Service Storm Summary</a></p>
+{% endblock %}

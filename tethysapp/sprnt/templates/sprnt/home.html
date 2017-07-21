@@ -1,0 +1,64 @@
+{% extends "sprnt/base.html" %}
+{% load tethys_gizmos staticfiles %}
+
+{% block scripts %}
+    {{ block.super }}
+    <script src="{% static 'sprnt/js/foo2.js' %}" type="text/javascript"></script>
+{% endblock %}
+
+{% block header_buttons %}
+  <div class="header-button glyphicon-button" data-toggle="tooltip" data-placement="bottom" title="Help">
+    <a data-toggle="modal" data-target="#help-modal"><span class="glyphicon glyphicon-question-sign"></span></a>
+  </div>
+{% endblock %}
+
+{% block app_content %}
+  {% gizmo sprnt_map %}
+{% endblock %}
+
+{% block app_navigation_items %}
+  {% url 'sprnt:home' as home_url %}
+  {% url 'sprnt:remote_sensing' as remote_sensing_url %}
+  {% url 'sprnt:hand' as hand_url %}
+  {% url 'sprnt:hurricane_matthew' as hurricane_matthew_url %}
+  <li class="title">Navigation</li>
+  <li class="{% if request.path == home_url %}active{% endif %}"><a href="{{ home_url }}">SPRNT NWM Comparison</a></li>
+  <li class="{% if request.path == remote_sensing_url %}active{% endif %}"><a href="{{ remote_sensing_url }}">Validation</a></li>
+  <li class="{% if request.path == hand_url %}active{% endif %}"><a href="{{ hand_url }}">HAND</a></li>
+  <li class="{% if request.path == hurricane_matthew_url %}active{% endif %}"><a href="{{ hurricane_matthew_url }}">Hurricane Matthew</a></li>
+    <div class="bigline sprntblue"></div>
+    <li class="title"><center><b>LEGEND</b></center></li>
+    <p><b>SPRNT HAND Map</b></p>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="SPRNT_HAND" checked>
+        <div class="foo sprnt"></div><p class="space">Inundated Area</p>
+      </label>
+    </div>
+    <p><b>NWM HAND Map</b></p>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="NWM_HAND" checked>
+        <div class="foo nwm"></div><p class="space">Inundated Area</p>
+      </label>
+    </div>
+    <p><b>Validation Map</b></p>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="ValidationMap" checked>
+        <div class="foo validation"></div><p class="space">Inundated Area</p>
+      </label>
+    </div>
+    <p><b>SPRNT & NWM Overlap</b></p>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" id="Intersect">
+        <div class="foo intersect"></div><p class="space">Intersected Area</p>
+      </label>
+    </div>
+{% endblock %}
+
+{% block styles %}
+    {{ block.super }}
+    <link href="{% static 'sprnt/css/map.css' %}" rel="stylesheet"/>
+{% endblock %}

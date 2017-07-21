@@ -1,0 +1,112 @@
+#inner-app-content {
+    height: 100%;
+    padding: 0;
+}
+
+/*Define size of legend box*/
+.foo {
+  float: left;
+  width: 18px;
+  height: 18px;
+  margin: 5px;
+  border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.arrow-up {
+  float: left;
+  width: 0px;
+  height: 0px;
+  border-left: 7px solid transparent;
+  border-right: 7px solid transparent;
+  border-bottom: 10px solid yellow;
+  margin: 5px;
+  margin-top: 7px;
+}
+
+.circle {
+  float: left;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  margin: 5px;
+  margin-top: 7px;
+  border: 1px solid rgba(0, 0, 0, .2);
+	/* width and height can be anything, as long as they're equal */
+}
+
+.foo1 {
+  float: left;
+  width: 18px;
+  height: 3px;
+  margin: 5px;
+  border: 1px solid rgba(0, 0, 0, .2);
+}
+
+.hline {
+  float: left;
+  width:18px;
+  height:3px;
+  margin: 5px;
+  margin-top: 11px;
+}
+
+.bigline {
+  float: left;
+  width:100%;
+  height:2px;
+  margin: 5px;
+}
+
+.checkbox label, .radio label {
+  width: 100%;
+}
+
+/*Choose colors for each legend box*/
+.flood {
+  background: #59DEE2;
+}
+
+.vvred {
+  background: #ff0000;
+}
+
+.HANDblue {
+  background: #0000ff;
+}
+
+.flow {
+  background: #63b8ff;
+}
+
+.vhgreen {
+  background: #00ff00;
+}
+
+.black {
+  background: black;
+}
+
+.sprntblue {
+  background: #3099fc;
+}
+
+.intersect {
+  background: #00ff73;
+}
+
+.sprnt {
+  background: #fffb00;
+}
+
+.nwm {
+  background: #004fe0;
+}
+
+.validation {
+  background: #73dfff;
+}
+
+/*Spacing for words next to color boxes on legend (i.e. developed, open space, etc.*/
+.space {
+padding-top: 3px;
+}
