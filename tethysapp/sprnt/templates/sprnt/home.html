@@ -21,7 +21,7 @@
   {% url 'sprnt:remote_sensing' as remote_sensing_url %}
   {% url 'sprnt:hand' as hand_url %}
   {% url 'sprnt:hurricane_matthew' as hurricane_matthew_url %}
-  <li class="title">Navigation</li>
+  <li class="title"><center><b>NAVIGATION</b></center></li>
   <li class="{% if request.path == home_url %}active{% endif %}"><a href="{{ home_url }}">SPRNT NWM Comparison</a></li>
   <li class="{% if request.path == remote_sensing_url %}active{% endif %}"><a href="{{ remote_sensing_url }}">Validation</a></li>
   <li class="{% if request.path == hand_url %}active{% endif %}"><a href="{{ hand_url }}">HAND</a></li>
